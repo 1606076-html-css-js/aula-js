@@ -20,7 +20,7 @@
                     <a href="index.html">Introdução</a>
                 </li>
                 <li>
-                    <a href="requisicoesJs.html">Requisições Ajax</a>
+                    <a href="requisicoesJs.html">Requisições JS</a>
                 </li>
             </ol>
         </div>
@@ -70,8 +70,9 @@
             </article>
             <article>
                 <h1>O que faz:</h1>
-                Document Object Model
+
                 <p>DOM: API para Javascript</p>
+                <p>Document Object Model</p>
                 <ul>
                     <li>Adiciona, alterar e remover completamente elementos HTML</li>
                     <li>Adiciona, alterar e remover completamente atributos HTML</li>
@@ -124,6 +125,7 @@
                 <button id="incluirExterno">Externo (Arquivo)</button>
                 <!-- Importando Javascript Externo -->
                 <script src="./exemploExterno.js"></script>
+                
             </article>
         </section>
         <section id="tipos_dados">
@@ -140,6 +142,8 @@
                     let variavelNumber = 10
                     let variavelString = "text"
                     let variabelBoolean = true
+                    let hehe = 6 / 2
+
                 </script>
                 <p>Em javascript temos alguns tipos de valor especiais como:</p>
                 <ul>
@@ -156,10 +160,13 @@
                 <p>Podemos declarar variáveis com escopo definido através da palavra chave <strong>let</strong></p>
                 <p>Podemos declarar constantes (não podem ter seu valor alterado) através da
                     palavra chave <strong>const</strong></p>
+
                 <script>
                     const valorConstante = 12
                     let variavelLet = 11
                     var variavelVar = 10
+
+                    // console.log(hehe)
                     // console.log(variavelVar)
                     // console.log(variavelLet)
                     // console.log(valorConstante)
@@ -179,15 +186,15 @@
 
                     function executarAoCarregar() {
                         const elementoBotao = document.getElementById("btn_exemplo_01_00")
-                        
+
                         // elementoBotao.addEventListener("click", function () {
-                            // return 10
+                        // return 10
                         // })
-                        
+
                         elementoBotao.addEventListener("click", () => alert("Olá"))
 
                         // const funcaoNormal = function () {
-                            // return 10 + 10
+                        // return 10 + 10
                         // }
 
                         // const funcaoComArrow = () => 10 + 10
@@ -456,14 +463,17 @@
                 <ol>
                     <li>Crie uma função chamada imprimePares, que não recebe nenhum parâmetro, e que
                         imprime todos números pares entre 1 e 100 no HTML ao clicar em um botão;</li>
-                    <li>Crie uma função chamada calculaMedia, que pegue 3 notas de inputs, e que imprima no HTML a média aritmética dos números</li>
+                    <li>Crie uma função chamada calculaMedia, que pegue 3 notas de inputs, e que imprima no HTML a média
+                        aritmética dos números</li>
                     <li>Crie uma função chamada menorNumero, que leia dois inputs,
                         e que imprime apenas o menor dos números em uma Div de resultado;</li>
                     <li>Crie uma função chamada maiorNumero, que leia dois inputs,
                         e que imprime apenas o maior dos números em uma Div de resultado;</li>
-                    <li>(Sem HTML, pode jogar direto no console.log()) Crie uma função chamada inverteArray, que recebe um array de qualquer tipo de
+                    <li>(Sem HTML, pode jogar direto no console.log()) Crie uma função chamada inverteArray, que recebe
+                        um array de qualquer tipo de
                         dado por parâmetro, e que retorna um array invertido nas posições;</li>
-                    <li>(Sem HTML, pode jogar direto no console.log()) Crie uma função chamada encontrarNumero, que recebe um número X por parâmetro e outro
+                    <li>(Sem HTML, pode jogar direto no console.log()) Crie uma função chamada encontrarNumero, que
+                        recebe um número X por parâmetro e outro
                         parâmetro sendo um array exemplo [2, 7, 8, 3].
                         A função deve retornar se foi encotrado ou não o número X dentro do array;</li>
                 </ol>

@@ -28,7 +28,7 @@
   <main>
     <section>
       <article>
-        <h1>jQuery (utilizada anteriormente) e Fetch</h1>
+        <h1>jQuery (utilizada anteriormente)</h1>
         <ul>
           <li>Biblioteca de funções Javascript</li>
           <li>Simplifica comandos nativos com métodos prontos</li>
@@ -43,10 +43,19 @@
         <ul>
           <li>Objeto nativo do browser para fazer requisições (XMLHttpRequest) para servidores</li>
           <li>Utiliza o JS e o DOM para mostrar ou usar dados requisitados</li>
-          <li>Pode ser feito sem o jQuery porém com ele fica muito mais fácil</li>
-          <li>Existem formas mais mordernas, como o Axios</li>
+          <li>Existem formas mais mordernas, como o Fetch e o Axios</li>
           <li><a
               href="https://www.w3schools.com/jquery/jquery_ajax_intro.asp">https://www.w3schools.com/jquery/jquery_ajax_intro.asp</a>
+          </li>
+        </ul>
+      </article>
+      <article>
+        <h1>Fetch</h1>
+        <ul>
+          <li>Ferramenta já pronta da API do JS para o navegador</li>
+          <li>Gera uma PROMESSA que retornará algo a partir de um recurso (arquivo ou API)</li>
+          <li><a
+              href="https://www.w3schools.com/jsref/api_fetch.asp">https://www.w3schools.com/jsref/api_fetch.asp</a>
           </li>
         </ul>
       </article>
@@ -81,12 +90,31 @@
         <div id="resultado-trazerTudo"></div>
         <script>
           async function trazerTudo() {
-            const url = "https://api-dwi.herokuapp.com/api/tutorials"
-            const fetchOptions = { method: "GET" }
-            const response = await fetch(url, fetchOptions)
-            const responseData = await response.json()
+            // Configurando variaveis
+            const url = "https://target-api-simples.cyclic.app/livros"
+
+            // Chamada para API
+            const response = await fetch(url)
+            const livros = await response.json()
+
+            // console.log(livros)
             const divResultado = document.querySelector("#resultado-trazerTudo")
-            divResultado.innerHTML = JSON.stringify(responseData)
+            
+
+            divResultado.innerHTML = `
+            <div>
+              <tr>
+                <td>${livros[0].title}</td>
+                <td>${livros[0].description}</td>
+              </tr>
+              <tr>
+                <td>${livros[1].title}</td>
+                <td>${livros[1].description}</td>
+              </tr>
+            </table>
+            `
+
+
           }
         </script>
       </div>
@@ -108,7 +136,7 @@
           const inputTitleValue = document.querySelector("#title").value
           const inputDescriptionValue = document.querySelector("#description").value
           const resultadoCadastroDiv = document.querySelector("#resultadoCadastro")
-          const url = "https://api-dwi.herokuapp.com/api/tutorials"
+          const url = "https://target-api-simples.cyclic.app/livros"
           const fetchOptions = {
             method: "POST",
             body: JSON.stringify({
@@ -136,7 +164,7 @@
       <script>
         async function deletarTudo() {
           const resultadoCadastroDiv = document.querySelector("#resultado_deletarTudo")
-          const url = "https://api-dwi.herokuapp.com/api/tutorials"
+          const url = "https://target-api-simples.cyclic.app/livros"
           const fetchOptions = {
             method: "DELETE",
           }
