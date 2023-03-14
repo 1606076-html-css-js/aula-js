@@ -102,7 +102,7 @@
             
 
             divResultado.innerHTML = `
-            <div>
+            <table border="2">
               <tr>
                 <td>${livros[0].title}</td>
                 <td>${livros[0].description}</td>
@@ -113,8 +113,6 @@
               </tr>
             </table>
             `
-
-
           }
         </script>
       </div>
@@ -133,9 +131,11 @@
       </div>
       <script>
         async function cadastrarDados() {
+          // Entradas
           const inputTitleValue = document.querySelector("#title").value
           const inputDescriptionValue = document.querySelector("#description").value
-          const resultadoCadastroDiv = document.querySelector("#resultadoCadastro")
+          
+          // Chamada pra API
           const url = "https://target-api-simples.cyclic.app/livros"
           const fetchOptions = {
             method: "POST",
@@ -143,10 +143,14 @@
               title: inputTitleValue,
               description: inputDescriptionValue
             }),
+            // body: `{"title": ${inputTitleValue}, "description": ${inputDescriptionValue}}`,
             headers: {"Content-type": "application/json"}
           }
           const response = await fetch(url, fetchOptions)
           const responseData = await response.json()
+
+          // Elemento que vamos mostrar o retorno da api
+          const resultadoCadastroDiv = document.querySelector("#resultadoCadastro")
           resultadoCadastroDiv.innerHTML = JSON.stringify(responseData)
         }
       </script>
