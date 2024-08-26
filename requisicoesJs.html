@@ -91,7 +91,7 @@
         <script>
           async function trazerTudo() {
             // Configurando variaveis
-            const url = "https://target-api-simples.cyclic.app/livros"
+            const url = "https://api-aula.up.railway.app/livros"
 
             // Chamada para API
             const response = await fetch(url)
@@ -136,7 +136,7 @@
           const inputDescriptionValue = document.querySelector("#description").value
           
           // Chamada pra API
-          const url = "https://target-api-simples.cyclic.app/livros"
+          const url = "https://api-aula.up.railway.app/livros"
           const fetchOptions = {
             method: "POST",
             body: JSON.stringify({
@@ -168,7 +168,7 @@
       <script>
         async function deletarTudo() {
           const resultadoCadastroDiv = document.querySelector("#resultado_deletarTudo")
-          const url = "https://target-api-simples.cyclic.app/livros"
+          const url = "https://api-aula.up.railway.app/livros"
           const fetchOptions = {
             method: "DELETE",
           }
